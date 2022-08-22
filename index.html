@@ -18,26 +18,41 @@
     <header class="navbar-dark bg-dark">
         <h1 class="display-4 text-light mx-auto">Interactive Weather Dashboard</h1>
     </header>
+
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <aside class="col-lg-4">
+                <div class="card bg-light p-2 mb-2">
+                    <h4>Enter a City Name</h4>
+                    <form class="form-inline" id="city-form">
+                        <input class="form-control sm-2" id="city-input" type="search" aria-label="Search">
+                        <button type="button" class="btn btn-primary" type="submit" id="form-submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    <ul class="list-group mt-2" id="city-list">
+                    </ul>
+                </div>
+            </aside>
+            <!--2nd column for current and forecast-->
+            <div class="col-lg-8">
+                <section class="card p-2" id="current" style="display:none;">
+                    <h1 id="city"></h1>
+                    <h5 id="date"></h5>
+                    <p id="temp"></p>
+                    <p id="humidity"></p>
+                    <p id="wind"></p>
+                    <p id="uv-index">UV Index: <span class="color"></span></p>
+                </section>
+
+                <section class="mt-2 mb-2" id="five-day" style="display:none;">
+                    <h3>5-Day Forecast:</h3>
+                    <!-- Cards will be dynamically created the the weather day for the 5-day forecast -->
+                    <div class="card-deck">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
