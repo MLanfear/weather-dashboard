@@ -10,12 +10,12 @@ let pastSearchButtonEl = document.querySelector('#past-search');
 let weatherContainerEl = document.querySelector('#current-weather');
 let uviEl = document.querySelector('#uv-index')
 
-const API_KEY = "ef8eb28ec35558928bf976f8285ae65a"
+const APIKey = "c972f9264e4c93be3c27e6b594557642";
 let fiveDay = [];
 
 const showNextFive = function(city) {
 
-    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY + "&units=imperial";
+    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
 
     fetch(apiUrl).then(function(response) {
             // Make sure fetch was sucsessful 
@@ -55,7 +55,7 @@ const theWeather = function(theWeatherData) {
     //current wind speed
     $('#weather-wind').text('Wind Speed: ' + theWeatherData.wind.speed.toFixed(1) + ' mph');
     //fetch uvi 
-    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + theWeatherData.coord.lat + "&lon=" + theWeatherData.coord.lon + "&appid=" + API_KEY + "&units=imperial")
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + theWeatherData.coord.lat + "&lon=" + theWeatherData.coord.lon + "&appid=" + APIKey + "&units=imperial")
         .then(function(response) {
             response.json().then(function(data) {
                 //display the uvi value
@@ -64,11 +64,11 @@ const theWeather = function(theWeatherData) {
                 uviEl.id = 'uv-index';
                 //if statement to change the applied color based on the UVI
                 if (uviValue >= 0 && uviValue <= 3) {
-                    uviEl.className = 'uvi-good'
+                    uviEl.className = 'uvi-test1'
                 } else if (uviValue > 3 && uviValue < 8) {
-                    uviEl.className = 'uvi-bad'
+                    uviEl.className = 'uvi-test2'
                 } else if (uviValue >= 8) {
-                    uviEl.className = 'uvi-ugly'
+                    uviEl.className = 'uvi-test3'
                 }
                 console.log()
                     //show five day forecast
