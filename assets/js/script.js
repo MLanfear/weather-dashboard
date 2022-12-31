@@ -10,7 +10,7 @@ let pastSearchButtonEl = document.querySelector('#past-search');
 let weatherContainerEl = document.querySelector('#current-weather');
 let uviEl = document.querySelector('#uv-index')
 
-const API_KEY = "c153f6386c3ebd7914ae0a756ca8b079"
+const API_KEY = "ef8eb28ec35558928bf976f8285ae65a"
 let fiveDay = [];
 
 const showNextFive = function(city) {
